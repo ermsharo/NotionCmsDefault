@@ -5,9 +5,15 @@ import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const { Client } = require("@notionhq/client");
+
+
+const notion = new Client({ auth: process.env.NOTION_API_KEY });
+
 
 
 export default function Home() {
+
   return (
     <>
       <Head>
@@ -16,7 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>Aqui esta</main>
+      <main className={styles.main}> asd {process.env.customKey}</main>
     </>
   );
 }
